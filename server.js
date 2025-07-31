@@ -12,6 +12,9 @@ connectDB();
 const app = express();
 app.use(cors());
 app.use(express.json()); // Body parser
+app.use(express.static('public'));
+
+
 
 
 app.get('/', (req, res) => {

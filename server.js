@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
@@ -12,6 +14,11 @@ connectDB();
 const app = express();
 app.use(cors());
 app.use(express.json()); // Body parser
+//added for parsing application/json
+app.use('/api/auth', require('./routes/auth.routes'));
+app.use('/api/appointments', require('./routes/appointments.routes'));
+app.use('/api/patients', require('./routes/patients.routes'));
+
 app.use(express.static('public'));
 
 

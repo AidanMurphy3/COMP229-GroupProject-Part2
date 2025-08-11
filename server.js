@@ -14,7 +14,7 @@ connectDB();
 const app = express();
 app.use(cors());
 app.use(express.json()); // Body parser
-//added for parsing application/json
+//added to parse JSON bodies 
 app.use('/api/auth', require('./routes/auth.routes'));
 app.use('/api/appointments', require('./routes/appointments.routes'));
 app.use('/api/patients', require('./routes/patients.routes'));
